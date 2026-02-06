@@ -16,7 +16,7 @@ spec:
         app: prediction-api-fs
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/YOUR_PROJECT_ID/labrepo/prediction-api-fs:0.0.1 # Docker image name, that we pushed to GCR
+      - image: us-central1-docker.pkg.dev/ada2026-486312/labrepo/prediction-api-fs:0.0.1 # Docker image name, that we pushed to GCR
         name: prediction-api     
         imagePullPolicy: Always
         volumeMounts:
