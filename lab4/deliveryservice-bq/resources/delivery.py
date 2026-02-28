@@ -4,20 +4,20 @@ from fastapi import status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from pdmodels.status_req import STATUS_CREATED
 from daos.delivery_dao import DeliveryDAO
 from daos.status_dao import StatusDAO
 from db import Session
 from pdmodels.delivery_req import DeliveryReq
+from pdmodels.status_req import STATUS_CREATED
 
 
 class Delivery:
     @staticmethod
     def create(d_req: DeliveryReq):
         session = Session()
-        delivery = DeliveryDAO(d_req.customer_id, d_req.provider_id, d_req.package_id, datetime.now(),
+        delivery = DeliveryDAO(d_req.id, d_req.customer_id, d_req.provider_id, d_req.package_id, datetime.now(),
                                datetime.strptime(d_req.delivery_time, '%Y-%m-%d %H:%M:%S.%f'),
-                               StatusDAO(STATUS_CREATED, datetime.now()))
+                               StatusDAO(d_req.id, STATUS_CREATED, datetime.now()))
         session.add(delivery)
         session.commit()
         session.refresh(delivery)
