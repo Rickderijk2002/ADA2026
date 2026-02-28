@@ -11,7 +11,7 @@ class Status:
     @staticmethod
     def update(d_id, status):
         session = Session()
-        delivery = session.query(DeliveryDAO).filter(DeliveryDAO.id == d_id)[0]
+        delivery = session.query(DeliveryDAO).filter(DeliveryDAO.id == d_id).first()
         delivery.status.status_name = status
         delivery.status.last_update = datetime.datetime.now()
         session.commit()
