@@ -2,7 +2,7 @@
 - checkInventory:
     call: http.get
     args:
-      url: http://Your_VM_IP:5000/products/Laptop
+      url: http://34.28.107.109:5000/products/Laptop
     result: GetInventoryRes
     next: returnOutput
 - returnOutput:
