@@ -37,7 +37,7 @@ training_subprocess:
     - trainModel:
         call: http.post
         args:
-          url: https://your_cloud_function_url/train_diabetes_predictor
+          url: https://us-central1-ada2026-486312.cloudfunctions.net/diabetes-predictor-training-api/train_diabetes_predictor
           body:
             project_id: ${pId}
             d_bucket: ${fBucket}
@@ -48,7 +48,7 @@ training_subprocess:
     - downloadModel:
         call: http.request
         args:
-          url: http://vmip:5002/diabetes_predictor
+          url: http://34.28.107.109:5002/diabetes_predictor
           method: PUT
           body:
             project_id: ${pId}
@@ -64,7 +64,7 @@ prediction_subprocess:
     - predictDiabetes:
         call: http.post
         args:
-          url: http://vmip:5002/diabetes_predictor/str
+          url: http://34.28.107.109:5002/diabetes_predictor/str
           body:
             input: ${pData}
         result: PredictDiabetesRes
