@@ -2,6 +2,7 @@ import datetime
 from zoneinfo import ZoneInfo
 
 from google.adk.agents import LlmAgent
+from google.genai import types
 
 
 def get_weather(city: str) -> dict:
@@ -67,6 +68,24 @@ root_agent = LlmAgent(
     name="weather_time_agent",
     model="gemini-2.5-flash-lite",
     description="Agent that provides weather and time information for cities.",
-    instruction="You help users with time and weather information for various cities.",
+    instruction="You help users with time and weather information for various cities.",  # this is the system prompt
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.2,  # More deterministic output
+        max_output_tokens=1000,
+        safety_settings=[
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold=types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+            )
+        ],
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=1.0,
+                attempts=10,
+                http_status_codes=[408, 429, 500, 502, 503, 504],
+            ),
+            timeout=120 * 1000,
+        )
+    ),
     tools=[get_weather, get_current_time],
 )
