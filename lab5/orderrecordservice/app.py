@@ -1,11 +1,10 @@
 from flask import Flask, request
 from flask import make_response
-from flask_cors import CORS
 
 from resources.order import Order, Orders
+from utils.printheaders import LoggingMiddleware
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)  # Enables CORS for all routes. This is not recommend for production.
 orders = Orders()
 placeRecord = Order()
 
@@ -33,4 +32,5 @@ def create_order():
 
 
 if __name__ == "__main__":
+    app.wsgi_app = LoggingMiddleware(app.wsgi_app)
     app.run(host='0.0.0.0', port=5000, debug=True)

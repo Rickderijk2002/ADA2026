@@ -1,10 +1,8 @@
 from flask import Flask, request
-from flask_cors import CORS
 
 from resources.product import Product, Products
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)  # Enables CORS for all routes. This is not recommend for production.
 product = Product()
 products = Products()
 
