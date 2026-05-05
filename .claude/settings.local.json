@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m markitdown \"C:\\\\Users\\\\rderi\\\\Downloads\\\\ADA-2026-Lab6-Multi-Agent-Systems with ADK-Part1 \\(1\\).pptx\")",
+      "Bash(pip install *)",
+      "Bash(python -m markitdown --version)"
+    ]
+  }
+}
