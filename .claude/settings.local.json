@@ -3,7 +3,21 @@
     "allow": [
       "Bash(python -m markitdown \"C:\\\\Users\\\\rderi\\\\Downloads\\\\ADA-2026-Lab6-Multi-Agent-Systems with ADK-Part1 \\(1\\).pptx\")",
       "Bash(pip install *)",
-      "Bash(python -m markitdown --version)"
+      "Bash(python -m markitdown --version)",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics?domain=financial\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics?domain=sales_crm\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/latest?domain=financial\")",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/latest?domain=sales_crm\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/financial/burn_rate/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/financial/revenue_growth/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/financial/cash_flow/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/churn_rate/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/conversion_rate/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/deal_velocity/history?limit=6\")",
+      "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/incoming_leads/history?limit=6\")",
+      "Read(//c/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app/kpi-analytics/kpi-serving/**)",
+      "Read(//c/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app/operational-intelligence/orchestrator-agent/**)"
     ]
   }
 }
