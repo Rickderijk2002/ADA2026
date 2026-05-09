@@ -17,7 +17,8 @@
       "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/deal_velocity/history?limit=6\")",
       "Bash(curl -s \"http://localhost:8080/kpis/pulse-demo/metrics/sales_crm/incoming_leads/history?limit=6\")",
       "Read(//c/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app/kpi-analytics/kpi-serving/**)",
-      "Read(//c/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app/operational-intelligence/orchestrator-agent/**)"
+      "Read(//c/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app/operational-intelligence/orchestrator-agent/**)",
+      "Bash(find \"C:/Users/rderi/OneDrive/Bureaublad/Jads 2025-2027/SM2-Jads-Courses/ADA/ADA-Claude/ada-pulse-2026/app\" -not -path \"*/__pycache__/*\" -not -path \"*/.venv/*\" -not -name \"*.pyc\" -not -name \"*.db\" | sort)"
     ]
   }
 }
